@@ -1,9 +1,15 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
+
+local colorscheme_day_night = function(day, night)
+  local current_hour = tonumber(os.date("%H", os.time()))
+
+  if current_hour >= 18 or current_hour < 6 then return night end
+
+  return day
+end
 
 ---@type LazySpec
 return {
@@ -11,7 +17,7 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "astrodark",
+    colorscheme = colorscheme_day_night("astrodark", "astromars"),
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
@@ -19,6 +25,13 @@ return {
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
+        CursorLineNr = { bold = true },
+        LineNr = { fg = "#798091" },
+      },
+      astromars = { -- a table of overrides/changes when applying the astrotheme theme
+        -- Normal = { bg = "#000000" },
+        CursorLineNr = { bold = true },
+        LineNr = { fg = "#8c7e85" },
       },
     },
     -- Icons can be configured throughout the interface
