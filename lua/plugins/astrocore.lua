@@ -76,6 +76,14 @@ return {
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
         ["<A-Right>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["<A-Left>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["<C-P>"] = {
+          function()
+            require("snacks").picker.files {
+              hidden = vim.tbl_get((vim.uv or vim.loop).fs_stat ".git" or {}, "type") == "directory",
+            }
+          end,
+          desc = "Find files",
+        },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
