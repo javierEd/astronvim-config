@@ -7,6 +7,9 @@ return {
   "AstroNvim/astrocommunity",
   -- import/override with your plugins folder
 
+  -- Code runner
+  { import = "astrocommunity/code-runner/overseer-nvim" },
+
   --Color
   { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
@@ -34,7 +37,7 @@ return {
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
   { import = "astrocommunity.editing-support.nvim-treesitter-context" },
   { import = "astrocommunity.editing-support.nvim-treesitter-endwise" },
-  { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
+  -- { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.treesj" },
   -- { import = "astrocommunity.editing-support.vim-doge" },
@@ -123,7 +126,7 @@ return {
   { import = "astrocommunity.snippet.nvim-snippets" },
 
   -- Split and Window
-  { import = "astrocommunity.split-and-window.colorful-winsep-nvim" },
+  -- { import = "astrocommunity.split-and-window.colorful-winsep-nvim" },
 
   -- Syntax
   { import = "astrocommunity.syntax.hlargs-nvim" },
@@ -132,6 +135,7 @@ return {
   { import = "astrocommunity.test.neotest" },
 
   -- Utility
+  { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.utility.nvim-toggler" },

@@ -60,7 +60,7 @@ return {
         neovide_cursor_vfx_mode = "railgun",
         neovide_cursor_antialiasing = true,
         neovide_remember_window_size = true,
-        neovide_opacity = 0.8,
+        neovide_opacity = 0.9,
         neovide_window_blurred = true,
       },
     },

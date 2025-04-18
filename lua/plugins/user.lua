@@ -88,16 +88,16 @@ return {
     "m4xshen/hardtime.nvim",
     opts = {
       disable_mouse = false,
-      --     disabled_keys = {
-      --       ["<Down>"] = {},
-      --       ["<End>"] = {},
-      --       ["<Home>"] = {},
-      --       ["<Left>"] = {},
-      --       ["<PageDown>"] = {},
-      --       ["<PageUp>"] = {},
-      --       ["<Right>"] = {},
-      --       ["<Up>"] = {},
-      --     },
+      disabled_keys = {
+        ["<Down>"] = {},
+        ["<End>"] = {},
+        ["<Home>"] = {},
+        ["<Left>"] = {},
+        ["<PageDown>"] = {},
+        ["<PageUp>"] = {},
+        ["<Right>"] = {},
+        ["<Up>"] = {},
+      },
     },
   },
 
@@ -208,6 +208,18 @@ return {
         if vim.F.if_nil(vim.b[bufnr].autoformat, vim.g.autoformat, true) then return { timeout_ms = 500 } end
       end,
       formatters_by_ft = { rust = { "leptosfmt" } },
+    },
+  },
+
+  {
+    "stevearc/overseer.nvim",
+    opts = {
+      strategy = {
+        "toggleterm",
+        direction = "float",
+        insert_mappings = true, -- whether or not the open mapping applies in insert mode
+        terminal_mappings = true,
+      },
     },
   },
 }
