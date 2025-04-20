@@ -213,13 +213,6 @@ return {
 
   {
     "stevearc/overseer.nvim",
-    opts = {
-      strategy = {
-        "toggleterm",
-        direction = "float",
-        insert_mappings = true, -- whether or not the open mapping applies in insert mode
-        terminal_mappings = true,
-      },
-    },
+    opts = { strategy = { "toggleterm", direction = "float" } },
   },
 }
